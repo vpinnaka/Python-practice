@@ -13,7 +13,7 @@ if __name__ == '__main__':
     arr = map(int, input().split())
 print(list(arr))
 ```
-### List comprehensions
+### List comprehensions [:twisted_rightwards_arrows:](https://www.hackerrank.com/challenges/list-comprehensions/tutorial)
 
 ```python
 # print all the combinations where coordinates sum(i+j+k) is less than n
