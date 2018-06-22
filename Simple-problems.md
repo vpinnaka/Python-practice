@@ -30,12 +30,15 @@ def peakElement(arr, n):
     while(start <= end):
         mid  = (start + end) // 2
         
-        if mid == 0 and arr[mid] >= arr[mid + 1]:
+        """if mid == 0 and arr[mid] >= arr[mid + 1]:
             return mid
         if mid == n - 1 and arr[mid] >= arr[mid -1]:
             return mid
             
         if arr[mid - 1] <= arr[mid] and arr[mid] >= arr[mid + 1]:
+            return mid""""
+        # optimized code    
+        if ((mid == 0 or arr[mid - 1] <= arr[mid]) and (mid == n - 1 or arr[mid + 1] <= arr[mid])):
             return mid
         elif arr[mid] <= arr[mid + 1]:
             start = mid + 1
