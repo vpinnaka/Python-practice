@@ -52,4 +52,41 @@ def peakElement(arr, n):
 
 output: 20
 ```
+# Problem 3 [:information_source:](https://practice.geeksforgeeks.org/problems/parenthesis-checker/0)
+Parenthesis Checker
+```python
+def checkIfBalanced(arr):
+    stack = []
+    for i in range(len(arr)):
+        if len(stack) > 0 and getMatchPair(stack[-1]) == arr[i]:
+            stack.pop()
+        else:
+            stack.append(arr[i])
+    return (True, False)[len(stack) > 0]
+
+def getMatchPair(bracket):
+    return { '(': ')' ,'{': '}' ,'[': ']'}.get(bracket, 'x')
+         
+if __name__ == '__main__':
+    n = int(input())
+    for i in range(n):
+        arr = input()
+        if checkIfBalanced(arr):
+            print('balanced')
+        else:
+            print('not balanced')
+```
+**test case**
+```
+Input:
+3
+{([])}
+()
+()[]
+
+Output:
+balanced
+balanced
+balanced
+```
 
